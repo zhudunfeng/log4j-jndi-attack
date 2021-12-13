@@ -10,10 +10,11 @@ import org.apache.logging.log4j.Logger;
  */
 public class Test {
     private static final Logger logger= LogManager.getLogger(Test.class);
+
+    //需要在pom种去掉springboot对log的默认配置
     public static void main(String[] args) {
 
-        System.setProperty("com.sun.jndi.rmi.object.trustURLCodebase", "true");
-        System.setProperty("com.sun.jndi.ldap.object.trustURLCodebase", "true");
+//        System.setProperty("com.sun.jndi.rmi.object.trustURLCodebase", "true");
 
 //        String user="${java:vm}";
 //        String user="${java:version}";
@@ -23,6 +24,5 @@ public class Test {
 //        String user="${java:hw}";
         //jndi注入
         logger.info("user{}",user);
-        logger.info("${env:USER}");
     }
 }

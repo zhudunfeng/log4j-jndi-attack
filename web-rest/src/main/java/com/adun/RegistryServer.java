@@ -18,9 +18,10 @@ public class RegistryServer {
     }
 
     public static void main(String[] args) throws RemoteException, NamingException, AlreadyBoundException {
-        Registry registry = LocateRegistry.createRegistry(1099);
+        LocateRegistry.createRegistry(1099);
+        Registry registry = LocateRegistry.getRegistry();
 //        String className=AttackObject.class.getName();
-        Reference reference = new Reference("AttackObject", "AttackObject","http://127.0.0.1:9001" );
+        Reference reference = new Reference("AttackObject", "AttackObject","http://127.0.0.1");
         ReferenceWrapper referenceWrapper = new ReferenceWrapper(reference);
         registry.bind("obj", referenceWrapper);
         System.out.println("RegistryServer is running.......");

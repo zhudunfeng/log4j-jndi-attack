@@ -1,5 +1,3 @@
-package com.adun.attack;
-
 import javax.naming.Context;
 import javax.naming.Name;
 import java.util.Hashtable;
